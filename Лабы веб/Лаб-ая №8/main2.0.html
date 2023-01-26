@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Лабораторная работа №8</title>
+
+    <link rel="stylesheet" href="main2.0.css">
+
+</head>
+
+
+
+<body>
+
+    <div id ="ax">
+
+        <header>
+
+            <div class="logo">
+
+               <img src="materials/logo.svg" alt="logo">
+
+             </div>
+             <div class="header_display">
+
+                <img src="materials/profile.svg" alt="profile">
+
+                <div>
+
+                    <a class="link" href="#">
+                        Войти
+                    </a>
+
+                    <a class="link" href="#">
+                        Зарегистрироваться
+                    </a>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+    <h1 id="last_publications" class="list_of_publications">
+        Последние публикации
+    </h1>
+
+    <div class="content">
+
+        <div class="grid">
+
+            <div class="publications">
+
+                <div class="posts">
+                    <div v-for="it in posts" class ="post">
+                        <img v-bind:src="it.image" class="post_img">
+                        <h2 class="post_name_header">{{it.title}}</h2>
+                        <p class="post_name">{{it.intro}}</p>
+                        <div class="labels">
+                            <div v-for="label in it.labels" class="label" v-bind:data-categories="label">{{label}}</div>
+                        </div>
+                    </div>
+                    <button class="Upload_button">Загрузить ещё 6</button>
+                </div>
+
+            </div>
+
+            <div class="categories">
+                <h3 class="list_navigation_title">Рубрики</h3>
+
+                <button class="categories_button " data-categories="Education">Обучение</button>
+
+                <button class="categories_button " data-categories="Career">Career</button>
+
+                <button class="categories_button " data-categories="Figma">Figma</button>
+
+                <button class="categories_button " data-categories="Console">Консоль</button>
+
+                <button class="categories_button " data-categories="Git">Git</button>
+
+                <button class="categories_button " data-categories="News">Новости</button>
+
+            </div>
+
+        </div>
+</div>
+
+<footer>
+
+    <div class="footer_container">
+
+        <div class="footer_links">
+
+            <a class="footer_link" href="#">
+                Об авторе
+            </a>
+
+            <a class="footer_link" href="#">
+                Технологии
+            </a>
+
+        </div>
+
+        <div class="info_blog">
+
+                <span>
+                    © Blog, 2022
+                </span>
+
+        </div>
+
+    </div>
+
+</footer>
+</div>
+<script src="vue.min.js"></script>
+<script src="axios.min.js"></script>
+<script src="axios.js"></script>
+
+</body>
+
+</html>
